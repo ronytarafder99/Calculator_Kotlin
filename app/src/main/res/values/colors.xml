@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#BFBDBD</color>
     <color name="blueback">#CDCDFA</color>
+    <color name="butext">#474646</color>
 </resources>

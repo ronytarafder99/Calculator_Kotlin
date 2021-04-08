@@ -23,7 +23,8 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
         <TableRow
             android:layout_width="match_parent"
@@ -37,8 +38,9 @@
                 android:layout_marginRight="2pt"
                 android:layout_weight="1"
                 android:text="AC"
-                android:background="@color/blueback">
-                android:textColor="@color/black"
+                android:onClick="Acevent"
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
                 android:textSize="10pt">
             </Button>
             <Button
@@ -47,8 +49,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="+/-"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -56,8 +61,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="/"
+                android:onClick="operatoeEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -65,7 +73,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="*"
-                android:background="@color/teal_700">
+                android:onClick="operatoeEvent"
+                android:background="@color/teal_200"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
         </TableRow>
         <TableRow
@@ -78,8 +89,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="7"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -87,8 +101,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="8"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -96,8 +113,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="9"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -105,7 +125,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="%"
-                android:background="@color/teal_700">
+                android:onClick="percentevent"
+                android:background="@color/teal_200"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
         </TableRow>
         <TableRow
@@ -118,8 +141,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="4"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -127,8 +153,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="5"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -136,8 +165,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="6"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -145,7 +177,10 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="+"
-                android:background="@color/teal_700">
+                android:onClick="operatoeEvent"
+                android:background="@color/teal_200"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
         </TableRow>
         <TableRow
@@ -158,8 +193,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="1"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -167,8 +205,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="2"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -176,8 +217,11 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="3"
+                android:onClick="numberEvent"
                 android:layout_marginRight="2pt"
-                android:background="@color/blueback">
+                android:background="@color/blueback"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
             <Button
                 android:layout_weight="1"
@@ -185,22 +229,29 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="-"
-                android:background="@color/teal_700">
+                android:onClick="operatoeEvent"
+                android:background="@color/teal_200"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
             </Button>
         </TableRow>
     </TableLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
         <Button
             android:layout_weight="1"
             android:id="@+id/bu0"
             android:layout_width="30pt"
             android:layout_height="30pt"
             android:text="0"
+            android:onClick="numberEvent"
             android:layout_marginRight="2pt"
-            android:background="@color/teal_200">
+            android:background="@color/teal_200"
+            android:textColor="@color/butext"
+            android:textSize="10pt">
         </Button>
         <Button
             android:layout_weight="1"
@@ -208,8 +259,11 @@
             android:layout_width="30pt"
             android:layout_height="30pt"
             android:text="."
+            android:onClick="numberEvent"
             android:layout_marginRight="2pt"
-            android:background="@color/teal_700">
+            android:background="@color/teal_200"
+            android:textColor="@color/butext"
+            android:textSize="10pt">
         </Button>
         <Button
             android:layout_weight="1"
@@ -217,7 +271,10 @@
             android:layout_width="30pt"
             android:layout_height="30pt"
             android:text="="
-            android:background="@color/teal_700">
+            android:onClick="equalEvent"
+            android:background="@color/teal_200"
+            android:textColor="@color/butext"
+            android:textSize="10pt">
         </Button>
     </LinearLayout>
 </LinearLayout>
