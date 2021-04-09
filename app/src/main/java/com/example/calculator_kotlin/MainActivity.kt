@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity() {
 
     fun operatoeEvent(view: View) {
         var editText = findViewById<EditText>(R.id.editText)
-        isnewop = true
         oldnumber = editText.text.toString()
+        isnewop = true
         var buDivide = findViewById<Button>(R.id.buDivide)
         var buMultiply = findViewById<Button>(R.id.buMultiply)
         var buPlus = findViewById<Button>(R.id.buPlus)
@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             buMinus.id -> {op = "-"}
             buDivide.id -> {op = "/"}
         }
+        editText.setText(op)
     }
 
     fun equalEvent(view: View) {
