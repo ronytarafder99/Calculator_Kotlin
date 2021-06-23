@@ -5,11 +5,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     var isnewop = true
     var oldnumber = ""
-    var op = "+"
+    var op = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,7 +19,9 @@ class MainActivity : AppCompatActivity() {
     fun numberEvent(view: View) {
         var editText = findViewById<EditText>(R.id.editText)
         if (isnewop)
-            editText.setText("")
+            if (op.isBlank()) {
+                editText.setText("")
+            }
         isnewop = false
         var bu1 = findViewById<Button>(R.id.bu1)
         var bu2 = findViewById<Button>(R.id.bu2)
@@ -35,19 +38,46 @@ class MainActivity : AppCompatActivity() {
 
         var buclick = editText.text.toString()
         var busclect = view as Button
-        when(busclect.id){
-           bu1.id->{buclick += "1"}
-           bu2.id->{buclick += "2"}
-           bu3.id->{buclick += "3"}
-           bu4.id->{buclick += "4"}
-           bu5.id->{buclick += "5"}
-           bu6.id->{buclick += "6"}
-           bu7.id->{buclick += "7"}
-           bu8.id->{buclick += "8"}
-           bu9.id->{buclick += "9"}
-           bu0.id->{buclick += "0"}
-           buDot.id->{buclick += "."}
-           buPlusMinus.id->{buclick = "-$buclick"}
+        when (busclect.id) {
+            bu1.id -> {
+                buclick += "1"
+            }
+            bu2.id -> {
+                buclick += "2"
+            }
+            bu3.id -> {
+                buclick += "3"
+            }
+            bu4.id -> {
+                buclick += "4"
+            }
+            bu5.id -> {
+                buclick += "5"
+            }
+            bu6.id -> {
+                buclick += "6"
+            }
+            bu7.id -> {
+                buclick += "7"
+            }
+            bu8.id -> {
+                buclick += "8"
+            }
+            bu9.id -> {
+                buclick += "9"
+            }
+            bu0.id -> {
+                buclick += "0"
+            }
+            buDot.id -> {
+                if ("." in buclick) {
+                } else {
+                    buclick += "."
+                }
+            }
+            buPlusMinus.id -> {
+                buclick = "-$buclick"
+            }
         }
         editText.setText(buclick)
     }
@@ -61,38 +91,70 @@ class MainActivity : AppCompatActivity() {
         var buPlus = findViewById<Button>(R.id.buPlus)
         var buMinus = findViewById<Button>(R.id.buMinus)
         var buselect = view as Button
-        when (buselect.id){
-            buMultiply.id -> {op = "*"}
-            buPlus.id -> {op = "+"}
-            buMinus.id -> {op = "-"}
-            buDivide.id -> {op = "/"}
+        if (op.isBlank()) {
+            when (buselect.id) {
+                buMultiply.id -> {
+                    op = "*"
+                }
+                buPlus.id -> {
+                    op = "+"
+                }
+                buMinus.id -> {
+                    op = "-"
+                }
+                buDivide.id -> {
+                    op = "/"
+                }
+            }
         }
-        editText.setText(op)
+        editText.setText("$oldnumber$op")
     }
 
     fun equalEvent(view: View) {
-        var editText = findViewById<EditText>(R.id.editText)
-        var newnumber = editText.text.toString()
-        var result = 0.0
-        when(op){
-            "+" -> {result = oldnumber.toDouble() + newnumber.toDouble()}
-            "*" -> {result = oldnumber.toDouble() * newnumber.toDouble()}
-            "/" -> {result = oldnumber.toDouble() / newnumber.toDouble()}
-            "-" -> {result = oldnumber.toDouble() - newnumber.toDouble()}
+        if (op.isNotBlank()) {
+            var editText = findViewById<EditText>(R.id.editText)
+            val string = editText.text.toString()
+            var newnumber: String = string.substringAfterLast("$op")
+            newnumber.toInt()
+            var result = 0.0
+            when (op) {
+                "+" -> {
+                    result = oldnumber.toDouble() + newnumber.toDouble()
+                }
+                "*" -> {
+                    result = oldnumber.toDouble() * newnumber.toDouble()
+                }
+                "/" -> {
+                    result = oldnumber.toDouble() / newnumber.toDouble()
+                }
+                "-" -> {
+                    result = oldnumber.toDouble() - newnumber.toDouble()
+                }
+            }
+            val finalResult = result.toString()
+            editText.setText(finalResult)
         }
-        editText.setText(result.toString())
+        op = ""
     }
 
     fun Acevent(view: View) {
         var editText = findViewById<EditText>(R.id.editText)
         editText.setText("0")
         isnewop = true
+        op = ""
     }
 
     fun percentevent(view: View) {
         var editText = findViewById<EditText>(R.id.editText)
-        var no = editText.text.toString().toDouble()/100
+        var no = editText.text.toString().toDouble() / 100
         editText.setText(no.toString())
         isnewop = true
+    }
+
+    fun deleteEvent(view: View) {
+        var editText = findViewById<EditText>(R.id.editText)
+        var no = editText.text.toString().dropLast(1)
+        editText.setText(no)
+        isnewop = false
     }
 }

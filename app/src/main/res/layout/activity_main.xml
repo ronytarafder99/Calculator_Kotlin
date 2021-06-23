@@ -29,7 +29,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="1pt">
+            android:layout_marginBottom="2pt">
 
             <Button
                 android:id="@+id/buAC"
@@ -39,18 +39,6 @@
                 android:layout_weight="1"
                 android:text="AC"
                 android:onClick="Acevent"
-                android:background="@color/blueback"
-                android:textColor="@color/butext"
-                android:textSize="10pt">
-            </Button>
-            <Button
-                android:layout_weight="1"
-                android:id="@+id/buPlusMinus"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:text="+/-"
-                android:onClick="numberEvent"
-                android:layout_marginRight="2pt"
                 android:background="@color/blueback"
                 android:textColor="@color/butext"
                 android:textSize="10pt">
@@ -73,7 +61,19 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="*"
+                android:background="@color/blueback"
+                android:layout_marginRight="2pt"
                 android:onClick="operatoeEvent"
+                android:textColor="@color/butext"
+                android:textSize="10pt">
+            </Button>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/Delete"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:text="D"
+                android:onClick="deleteEvent"
                 android:background="@color/teal_200"
                 android:textColor="@color/butext"
                 android:textSize="10pt">
@@ -259,6 +259,18 @@
             android:layout_width="30pt"
             android:layout_height="30pt"
             android:text="."
+            android:onClick="numberEvent"
+            android:layout_marginRight="2pt"
+            android:background="@color/teal_200"
+            android:textColor="@color/butext"
+            android:textSize="10pt">
+        </Button>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/buPlusMinus"
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:text="+/-"
             android:onClick="numberEvent"
             android:layout_marginRight="2pt"
             android:background="@color/teal_200"
